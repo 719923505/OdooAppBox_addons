@@ -1,0 +1,62 @@
+<openerp>
+  <data>
+    <record model="app.view" id="appbox_timesheet.app_view_timesheet_kanban">
+      <field name="name">Timesheet</field>
+      <field name="res_model">account.analytic.line</field>
+      <field name="type">kanban</field>
+      <field name="arch_original" type="xml">
+        <kanban style="display:flex;">
+          <div style="flex: 0 0 auto; align-self: center;">
+            <field name="image" widget="avatar" width="64" height="64"/>
+          </div>
+          <div style="width: 50%; flex: 1 1 auto; margin-left: 1.5rem">
+            <field name="date" class="value-left"/>
+            <field name="unit_amount"/>
+          </div>
+        </kanban>
+      </field>
+    </record>
+
+    <record model="app.view" id="appbox_timesheet.app_view_timesheet_form">
+      <field name="name">Timesheet</field>
+      <field name="res_model">account.analytic.line</field>
+      <field name="type">form</field>
+      <field name="arch_original" type="xml">
+        <form>
+          <div class="section">
+            <field name="employee_id"/>
+            <field name="date"/>
+            <field name="project_id"/>
+            <field name="task_id"/>
+            <field name="amount"/>
+            <field name="unit_amount"/>
+            <field name="name"/>
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <record model="app.view" id="appbox_timesheet.app_view_timesheet_search">
+      <field name="name">Timesheet</field>
+      <field name="res_model">account.analytic.line</field>
+      <field name="type">search</field>
+      <field name="arch_original" type="xml">
+        <search>
+          <field name="employee_id"/>
+          <field name="date"/>
+          <field name="project_id"/>
+          <field name="task_id"/>
+          <field name="amount"/>
+          <field name="unit_amount"/>
+          <field name="name"/>
+          <filter_group expand="0" string="Group By">
+              <filter string="Employee" name="groupby_employee_id" context="{'group_by':'employee_id'}"/>
+              <filter string="Project" name="groupby_project_id" context="{'group_by':'project_id'}"/>
+              <filter string="Task" name="groupby_task_id" context="{'group_by':'task_id'}"/>
+              <filter string="Date" name="groupby_date" context="{'group_by':'date'}"/>
+          </filter_group>
+        </search>
+      </field>
+    </record>
+  </data>
+</openerp>

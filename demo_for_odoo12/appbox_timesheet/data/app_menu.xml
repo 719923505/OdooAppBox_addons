@@ -1,0 +1,11 @@
+<openerp>
+  <data>
+    <record model="app.menu" id="appbox_timesheet.menu_timesheet">
+      <field name="name">Timesheet</field>
+      <field name="sequence">2</field>
+      <field name="parent_id" ref="appbox_base.menu_basic_info_root"/>
+      <field name="action" ref="appbox_timesheet.act_timesheet"/>
+      <field name="icon"/>
+    </record>
+  </data>
+</openerp>
