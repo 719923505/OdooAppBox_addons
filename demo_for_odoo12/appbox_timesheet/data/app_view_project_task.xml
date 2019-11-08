@@ -1,0 +1,20 @@
+<openerp>
+  <data>
+
+    <record model="app.view" id="appbox_timesheet.app_view_project_task_form">
+      <field name="name">Task</field>
+      <field name="res_model">project.task</field>
+      <field name="type">form</field>
+      <field name="arch_original" type="xml">
+        <form>
+          <div class="section">
+            <field name="name" attrs="{'required': True}"/>
+            <!--调不出来日期控件-->
+            <!--<field name="date_assign"/>-->
+          </div>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</openerp>

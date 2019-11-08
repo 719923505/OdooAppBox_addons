@@ -6,12 +6,12 @@
       <field name="type">kanban</field>
       <field name="arch_original" type="xml">
         <kanban style="display:flex;">
-          <div style="flex: 0 0 auto; align-self: center;">
-            <field name="image" widget="avatar" width="64" height="64"/>
+          <div style="flex: 0 0 auto;">
+            <field name="employee_id"/>
           </div>
           <div style="width: 50%; flex: 1 1 auto; margin-left: 1.5rem">
-            <field name="date" class="value-left"/>
-            <field name="unit_amount"/>
+            <field name="date" options='{"showType": "months"}'/>
+            <field name="name"/>
           </div>
         </kanban>
       </field>
@@ -25,12 +25,12 @@
         <form>
           <div class="section">
             <field name="employee_id"/>
-            <field name="date"/>
-            <field name="project_id"/>
+            <field name="date" attrs="{'required': True}"/>
+            <field name="project_id" attrs="{'required': True}"/>
             <field name="task_id"/>
-            <field name="amount"/>
+            <field name="amount" attrs="{'required': True}"/>
             <field name="unit_amount"/>
-            <field name="name"/>
+            <field name="name" attrs="{'required': True}"/>
           </div>
         </form>
       </field>

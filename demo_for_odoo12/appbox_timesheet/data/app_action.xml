@@ -2,7 +2,7 @@
   <data>
     <record model="app.act_window" id="appbox_timesheet.act_timesheet">
       <field name="name">Timesheet</field>
-      <field name="res_model">product.template</field>
+      <field name="res_model">account.analytic.line</field>
       <field name="target">self</field>
       <field name="view_mode">kanban,form</field>
       <field name="view_kanban" ref="appbox_timesheet.app_view_timesheet_kanban"/>

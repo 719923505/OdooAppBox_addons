@@ -20,11 +20,13 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['appbox', 'appbox_base', 'hr_timesheet'],
+    'depends': ['appbox', 'appbox_base', 'hr_timesheet', 'project'],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'data/app_view_hr_employee.xml',
+        'data/app_view_project.xml',
+        'data/app_view_project_task.xml',
         'data/app_view_timesheet.xml',
         'data/app_action.xml',
         'data/app_menu.xml',
