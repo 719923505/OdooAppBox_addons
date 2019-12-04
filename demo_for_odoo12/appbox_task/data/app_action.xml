@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+    <record model="app.act_window" id="appbox_task.act_project_task">
+      <field name="name">Task1</field>
+      <field name="res_model">project.task</field>
+      <field name="target">self</field>
+      <field name="view_mode">kanban,form</field>
+      <field name="view_kanban" ref="appbox_task.app_view_project_task_kanban"/>
+      <field name="view_form" ref="appbox_task.app_view_project_task_form"/>
+      <field name="view_search" ref="appbox_task.app_view_project_task_search"/>
+      <field name="domain">[]</field>
+      <field name="context">{}</field>
+    </record>
+  </data>
+</odoo>

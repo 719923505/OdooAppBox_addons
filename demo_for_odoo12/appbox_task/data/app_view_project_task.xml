@@ -1,0 +1,64 @@
+<odoo>
+    <data>
+        <record model="app.view" id="appbox_task.app_view_project_task_kanban">
+            <field name="name">Task2</field>
+            <field name="res_model">project.task</field>
+            <field name="type">kanban</field>
+            <field name="arch_original" type="xml">
+                <kanban style="display:flex;">
+                    <div style="flex: 0 0 auto;">
+                        <field name="name"/>
+                    </div>
+                    <div style="width: 50%; flex: 1 1 auto; margin-left: 1.5rem">
+                        <field name="user_id"/>
+                    </div>
+                </kanban>
+            </field>
+        </record>
+
+        <record model="app.view" id="appbox_task.app_view_project_task_form">
+            <field name="name">Task3</field>
+            <field name="res_model">project.task</field>
+            <field name="type">form</field>
+            <field name="arch_original" type="xml">
+                <form>
+                    <div class="section">
+                        <field name="code"/>
+                        <field name="name" attrs="{'required': True}"/>
+                        <field name="project_id"/>
+                        <field name="user_id"/>
+                        <field name="date_assign"/>
+                        <!--<field name="description" widget="html"/>-->
+                        <field name="timesheet_ids" widget="one2many_list">
+                            <kanban style="display:flex; flex-flow: wrap; justify-content: space-between;">
+                                <field name="date"/>
+                                <field name="employee_id"/>
+                                <field name="name"/>
+                                <field name="unit_amount"/>
+                            </kanban>
+                        </field>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="app.view" id="appbox_task.app_view_project_task_search">
+            <field name="name">Task4</field>
+            <field name="res_model">project.task</field>
+            <field name="type">search</field>
+            <field name="arch_original" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="project_id"/>
+                    <filter_group expand="0" string="Group By">
+                        <filter string="User" name="groupby_user_id" context="{'group_by':'user_id'}"/>
+                        <filter string="Project" name="groupby_project_id" context="{'group_by':'project_id'}"/>
+                        <filter string="Date" name="groupby_date" context="{'group_by':'date_assign'}"/>
+                    </filter_group>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>
